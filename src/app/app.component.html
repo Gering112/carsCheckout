@@ -1,6 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <div><h1>{{pageTitle}}</h1>
-    <app-register></app-register>
   </div>
 </div>
+<nav>
+  <!--routerLinke = which path we want to navigate to-->
+  <a routerLink = './login' routerLinkActive = 'active'>Login</a>
+</nav>
+
+<router-outlet></router-outlet>

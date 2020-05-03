@@ -4,7 +4,7 @@ import {Component, OnInit} from '@angular/core'
     selector : 'account-sel',
     templateUrl : './account.component.html'
 })
-export class account implements OnInit{
+export class accountComponent implements OnInit{
 
     ngOnInit():void{
 
