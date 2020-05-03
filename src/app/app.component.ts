@@ -8,3 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   pageTitle = 'car-checkout';
 }
+
