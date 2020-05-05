@@ -8,6 +8,14 @@ import {Router} from '@angular/router'
 
 })
 export class loginComponent implements OnInit{
+    userNameField = ''
+    passwordField = ''
+
+    loginClick():void{
+
+        alert(`user name is: ${this.userNameField} and the password is: ${this.passwordField}`)
+        
+    }
    
     ngOnInit():void{
 
