@@ -7,10 +7,11 @@ import {accountComponent} from './account/account.component'
 //import {loginComponent} from './login/login.component'
 import {AppRoutingModule, routingComponents} from './app-routing.module'
 import { navBarComponent } from './shared/navbar/navbar.component';
+import { loginModalComponent } from './login/loginModal/loginModal.component';
 
 @NgModule({
   declarations: [
-    AppComponent,routingComponents, accountComponent,navBarComponent 
+    AppComponent,routingComponents, accountComponent,navBarComponent,loginModalComponent 
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule
