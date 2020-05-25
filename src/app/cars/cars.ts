@@ -1,13 +1,15 @@
 export interface ICar{
-    location: string;
-    mileage: number;
-    transmition: string;
-    exterior_color: string;
-    interior_color: string;
-    maximum_seating: string;
-    gas_mileage: string;
+
+    make: string;
+    model: string
     engine: string;
-    driverTrain: string;
-    fuelType: string;
+    horsepower: number;
+    weight_lbs: number;
+    acceleration: number
+    year: number;
+    category: string
+    location: string;
+    origin: string;
+    
 
 }
