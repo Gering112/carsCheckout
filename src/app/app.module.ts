@@ -7,12 +7,11 @@ import {accountComponent} from './account/account.component'
 //import {loginComponent} from './login/login.component'
 import {AppRoutingModule, routingComponents} from './app-routing.module'
 import { navBarComponent } from './shared/navbar/navbar.component';
-import { loginModalComponent } from './login/loginModal/loginModal.component';
 import {HttpClientModule} from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
-    AppComponent,routingComponents, accountComponent,navBarComponent,loginModalComponent 
+    AppComponent,routingComponents, accountComponent,navBarComponent 
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule, HttpClientModule

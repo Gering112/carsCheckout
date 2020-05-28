@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-// // connecting to the database
+// connecting to the database
 // var mysql = require('mysql');
 // var connection = mysql.createPool({
 //   //properties
