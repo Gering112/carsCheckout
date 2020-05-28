@@ -29,6 +29,7 @@ export class loginComponent implements OnInit{
         fetch("http://localhost:3000/users")
         .then((resp) => resp.json()) // Call the fetch function passing the url of the API as a parameter
         .then(function(data) {
+            console.log(data)
             debugger;
         
     })
