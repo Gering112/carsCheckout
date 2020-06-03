@@ -4,15 +4,12 @@
 .form-inline .form-control{
     width:600px;
  }
-
-  
-
  #navBtn, a:not(#navNoChange)  {
     position: relative;
     display: block;
     text-transform: uppercase;
     margin: 10px 0;
-    padding: 10px 20px;
+    padding: 3px 20px;
     text-decoration: none;
     color: #262626;
     font-family: sans-serif;

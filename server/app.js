@@ -2,64 +2,40 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var bodyParser = require('body-parser');
+var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-// connecting to the database
-// var mysql = require('mysql');
-// var connection = mysql.createPool({
-//   //properties
-//   connectionLimit : 50,
-//   host : 'localhost',
-//   user: 'root',
-//   password: 'softWare!2',
-//   database: 'carCheckout'
-// });
+app.use(bodyParser.json())
+// body parser
+app.use(bodyParser.urlencoded({extended:false}))
 
 
-// app.use('/', function(req,res){
-//   //about mysql
-//   connection.getConnection(function(err, tempCont){
-//     if (!!err){
-//       tempCont.release();
-//       console.log("error in the query");
-//     }
-//     else{
-//       console.log('query success!');
-//       tempCont.query('SELECT * FROM cars', function(error, row, fields){
-//         tempCont.release();
-//         if (!!err){
-//           console.log("error in the query!");
-//         }
-//         else{
-//           res.json(row);
-//         }
-//       });
-//      }
-//   });
+// testing DB connection
+var db = require('./config/database.js');
 
-// })
-
-//allow request from any origin
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
+db.authenticate()
+  .then(function(err) {
+    console.log('Connection has been established successfully.',err);
+  })
+  .catch(function (err) {
+    console.log('Unable to connect to the database:', err);
+  });
 
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+//route for login model
+app.use('/login', require('./routes/login'))
 
 module.exports = app;

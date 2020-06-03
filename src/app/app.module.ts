@@ -1,17 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-//import { registerComponent } from './registeration/register.component';
 import {FormsModule} from '@angular/forms'
 import {accountComponent} from './account/account.component'
 //import {loginComponent} from './login/login.component'
 import {AppRoutingModule, routingComponents} from './app-routing.module'
 import { navBarComponent } from './shared/navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http'; 
+import { registerComponent } from './registeration/register.component';
 
 @NgModule({
   declarations: [
-    AppComponent,routingComponents, accountComponent,navBarComponent 
+    AppComponent,routingComponents, accountComponent,navBarComponent, 
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule, HttpClientModule

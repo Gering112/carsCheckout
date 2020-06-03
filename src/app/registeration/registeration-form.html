@@ -1,24 +1,45 @@
-<div class="row">
-    <div class="col-md-4">
-      <h1>Register</h1>
-      <form>
-        <div class='textbox'>
-          <input type='text' placeholder="Name">
-        </div>
-        <div class='textbox'>
-          <input type='email' placeholder="Email">
-        </div>
-        <div class='textbox'>
-          <input type='password' placeholder="Password">
-        </div>
-        <div class='textbox'>
-          <input type='password' placeholder="confirm password">
-        </div>
+<div class="container">
+  <div>
+    <h1>Register</h1>
+    <form #registerForm = "ngForm" (ngSubmit)="submitForm(registerForm)" >
+      <div class="form-group">
+        <input required #namefield="ngModel" type='text' name="username" [(ngModel)]='userNameField' placeholder="user name" 
+        [class.fieldError] = "registerForm.submitted && namefield.invalid">
+        <div [hidden]="!registerForm.submitted || namefield.valid" class="alert alert-danger">Enter a user name</div>
+      </div>
 
-        <button>Create Account</button>
+      <div class='form-group'>
+        <input required #firstname="ngModel" type='text' name="firstname" [(ngModel)]='firstNameField' placeholder="First name"
+        [class.fieldError] = "registerForm.submitted && firstname.invalid">
+        <div [hidden]="!registerForm.submitted || firstname.valid" class="alert alert-danger">Enter firstname</div>
+      </div>
 
+      <div class='form-group'>
+        <input required #lastname="ngModel" type='text' name="lastname" [(ngModel)]='lastNameField' placeholder="last name"
+        [class.fieldError] = "registerForm.submitted && lastname.invalid">
+        <div [hidden]="!registerForm.submitted || lastname.valid" class="alert alert-danger">Enter lastname</div>
+      </div>
 
-      </form>
-    </div>
+      <div class="form-group">
+        <input required #emailfield="ngModel" type='email' name="email" [(ngModel)]='emailField' placeholder="Email"
+        [class.fieldError] = "registerForm.submitted && emailfield.invalid">
+      </div>
+
+      <div class='form-group'>
+        <input required #passwordfield="ngModel" minlength="8" type='password' name="password" [(ngModel)]='passwordField' placeholder="Password"
+        [class.fieldError] = "registerForm.submitted && passwordfield.invalid">
+      </div>
+      
+      <!-- <div class='textbox'>
+        <input type='password' [(ngModel)]='confirmPassField' placeholder="confirm password">
+      </div> -->
+
+      <button class="btn-btn-primary" type="submit">Create Account</button>
+
+      <!-- <button type="submit" class="btn btn-primary">Create Account</button> -->
+    </form>   
   </div>
+</div>
+
+{{registerForm.touched | json}}
   
