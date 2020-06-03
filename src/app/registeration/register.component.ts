@@ -18,18 +18,9 @@ export class registerComponent implements OnInit {
     emailField = ''
     passwordField = ''
     confirmPassField = ''
-    
-
-    
-
-
+  
     constructor(private userService : UserService){}
     users: {}
-
-
-    loadUsers():void {
-        //this.userService.registerUser(this.newUser).subscribe(data => console.log(data))
-    }
 
     submitForm(form : NgForm):void{
         console.log("in sumbit: ", form.valid)

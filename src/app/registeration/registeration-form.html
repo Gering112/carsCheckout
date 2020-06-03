@@ -1,45 +1,48 @@
-<div class="container">
+<div class="container" style="text-align:center">
   <div>
     <h1>Register</h1>
-    <form #registerForm = "ngForm" (ngSubmit)="submitForm(registerForm)" >
-      <div class="form-group">
-        <input required #namefield="ngModel" type='text' name="username" [(ngModel)]='userNameField' placeholder="user name" 
-        [class.fieldError] = "registerForm.submitted && namefield.invalid">
-        <div [hidden]="!registerForm.submitted || namefield.valid" class="alert alert-danger">Enter a user name</div>
-      </div>
+    <form #registerForm = "ngForm" (ngSubmit)="submitForm(registerForm)" class="col-lg-12 offset-lg-3">
+        <div class="form-group col-lg-6">
+          <input class="form-control" required #namefield="ngModel" type='text' name="username" [(ngModel)]='userNameField' placeholder="user name" 
+          [class.fieldError] = "registerForm.submitted && namefield.invalid">
+          <div [hidden]="!registerForm.submitted || namefield.valid" class="form-control alert-danger">Enter a user name</div>
+        </div>
 
-      <div class='form-group'>
-        <input required #firstname="ngModel" type='text' name="firstname" [(ngModel)]='firstNameField' placeholder="First name"
-        [class.fieldError] = "registerForm.submitted && firstname.invalid">
-        <div [hidden]="!registerForm.submitted || firstname.valid" class="alert alert-danger">Enter firstname</div>
-      </div>
+        <div class='form-group col-lg-6'>
+          <input class="form-control" required #firstname="ngModel" type='text' name="firstname" [(ngModel)]='firstNameField' placeholder="First name"
+          [class.fieldError] = "registerForm.submitted && firstname.invalid">
+          <div [hidden]="!registerForm.submitted || firstname.valid" class="form-control alert alert-danger">Enter firstname</div>
+        </div>
 
-      <div class='form-group'>
-        <input required #lastname="ngModel" type='text' name="lastname" [(ngModel)]='lastNameField' placeholder="last name"
-        [class.fieldError] = "registerForm.submitted && lastname.invalid">
-        <div [hidden]="!registerForm.submitted || lastname.valid" class="alert alert-danger">Enter lastname</div>
-      </div>
+        <div class='form-group col-lg-6'>
+          <input class="form-control " required #lastname="ngModel" type='text' name="lastname" [(ngModel)]='lastNameField' placeholder="last name"
+          [class.fieldError] = "registerForm.submitted && lastname.invalid">
+          <div [hidden]="!registerForm.submitted || lastname.valid" class="form-control alert alert-danger">Enter lastname</div>
+        </div>
 
-      <div class="form-group">
-        <input required #emailfield="ngModel" type='email' name="email" [(ngModel)]='emailField' placeholder="Email"
-        [class.fieldError] = "registerForm.submitted && emailfield.invalid">
-      </div>
+        <div class="form-group col-lg-6">
+          <input class="form-control" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" #emailfield="ngModel" type='email' name="email" [(ngModel)]='emailField' placeholder="Email"
+          [class.fieldError] = "registerForm.submitted && emailfield.invalid" >
+          <div [hidden]="!registerForm.submitted || emailfield.valid" class="form-control alert alert-danger">Please enter a valid email address</div>
+        </div>
 
-      <div class='form-group'>
-        <input required #passwordfield="ngModel" minlength="8" type='password' name="password" [(ngModel)]='passwordField' placeholder="Password"
-        [class.fieldError] = "registerForm.submitted && passwordfield.invalid">
-      </div>
-      
-      <!-- <div class='textbox'>
-        <input type='password' [(ngModel)]='confirmPassField' placeholder="confirm password">
-      </div> -->
-
-      <button class="btn-btn-primary" type="submit">Create Account</button>
-
-      <!-- <button type="submit" class="btn btn-primary">Create Account</button> -->
+        <div class='form-group col-lg-6'>
+          <input class="form-control" required #passwordfield="ngModel" minlength="8" type='password' name="password" [(ngModel)]='passwordField' placeholder="Password"
+          [class.fieldError] = "registerForm.submitted && passwordfield.invalid">
+          <div [hidden]="!registerForm.submitted || passwordfield.valid" class="form-control alert alert-danger">Please enter a minimum of 8 characters</div>
+        </div>
+        
+        <!-- <div class='textbox'>
+          <input type='password' [(ngModel)]='confirmPassField' placeholder="confirm password">
+        </div> -->
+        <div class="form-group col-md-6">
+          <button style="justify-content: center;" class="btn btn-primary" type="submit">Create Account</button>
+        </div>
+        
+        <!-- <button type="submit" class="btn btn-primary">Create Account</button> -->
     </form>   
   </div>
 </div>
 
-{{registerForm.touched | json}}
+<!-- {{registerForm.touched | json}} -->
   
