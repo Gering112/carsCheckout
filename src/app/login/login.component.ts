@@ -21,8 +21,6 @@ export class loginComponent implements OnInit{
 
     loginClick():void{
         debugger;
-
-        
         //alert(`user name is: ${this.userNameField} and the password is: ${this.passwordField}`)
 
     }

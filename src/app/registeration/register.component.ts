@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { UserService } from '../login/user.service';
 import { NgForm } from '@angular/forms';
+import {Router} from '@angular/router'
 
 
 @Component({
@@ -19,13 +20,14 @@ export class registerComponent implements OnInit {
     passwordField = ''
     confirmPassField = ''
   
-    constructor(private userService : UserService){}
+    constructor(private userService : UserService, private router : Router){}
     users: {}
 
     submitForm(form : NgForm):void{
         console.log("in sumbit: ", form.valid)
         if (form.valid){
             this.summitRegister()
+            this.router.navigate(['./login'])
         }
 
     }

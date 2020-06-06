@@ -1,4 +1,4 @@
-<div class='loginForm'>
+<!-- <div class='loginForm'>
     <h1>Login</h1>
     <div class='textbox'>
         <input type='text' [(ngModel)]='userNameField' placeholder="User name" >
@@ -17,15 +17,30 @@
         <button [routerLink] = "['/register']" >Create an account</button>
     </div>
     
-</div>
+</div> -->
 
-<body>
-    <div>
-        <button (click)="loadUsers()">load users</button>
+<body class="text-center">
+
+ <form class="form-signin">
+    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <input type="text" #username="ngModel" name="username" class="form-control"  [(ngModel)]='userNameField' placeholder="username" required="" autofocus="">
+    <input type="password" #inputpassword="ngModel" name="inputpassword" class="form-control" [(ngModel)]="passwordField" placeholder="Password" required="">
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
     </div>
-    <ul>
-        <li *ngFor = "let user of users">{{user.username}}</li>
-    </ul>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <div class="loginSignUpSeparator "><span class="textInSeparator">or</span></div>
+    <h3>use fb</h3>
+    <h3>use google</h3>
+    <h3>use twitter</h3>
+    <div>
+        <button [routerLink]="['/register']" class="btn btn-lg btn-primary btn-block" type="button">Create an account</button>
+    </div>
+
+  </form>
 </body>
 
 
